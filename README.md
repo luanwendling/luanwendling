@@ -4,6 +4,12 @@
 - 🌱 Meu foco atualmente está em aplicar minha experiência em Linux, redes, automação, cloud e observabilidade para desenvolver soluções escaláveis, seguras e inovadoras.
 - 📫 Contate-me no email: luanmw0@gmail.com
 
+
+## ⏱️ Coding Activity
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
+
+
 ## Redes Sociais
 
 <div> 
