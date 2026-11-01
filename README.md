@@ -4,7 +4,6 @@
 
 [![wakatime](https://wakatime.com/badge/user/13ba27f0-fb5f-46cf-ad72-5c001ac27bef.svg)](https://wakatime.com/@13ba27f0-fb5f-46cf-ad72-5c001ac27bef)
 
-Esse é o quanto eu trabalho programando
 
 <a href="https://wakatime.com/@13ba27f0-fb5f-46cf-ad72-5c001ac27bef"><img src="assets/wakatime-activity.svg" alt="Atividade no WakaTime no último ano" /></a>
 
