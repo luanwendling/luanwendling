@@ -1,6 +1,5 @@
 """Exercise the actual embedded workflow script with synthetic credentials/data."""
 
-import base64
 import contextlib
 import io
 import json
@@ -23,8 +22,7 @@ SCRIPT = textwrap.dedent(re.search(
     WORKFLOW,
     flags=re.DOTALL,
 ).group(1))
-API_KEY = "waka_unit_test_only"
-BASIC_CREDENTIAL = base64.b64encode(API_KEY.encode()).decode()
+TOKEN = "waka_tok_unit_test_only"
 ORIGINAL = "Profile intro\n<!--START_SECTION:waka-->old stats<!--END_SECTION:waka-->\nFooter\n"
 
 
@@ -71,28 +69,35 @@ class WakaWorkflowTests(unittest.TestCase):
             "zoneinfo.ZoneInfo", return_value=timezone(timedelta(hours=-3))
         ))
 
-    def run_script(self, api_key=API_KEY):
-        with patch.dict(os.environ, {"WAKATIME_API_KEY": api_key}, clear=True):
+    def run_script(self, token=TOKEN):
+        with patch.dict(os.environ, {"WAKATIME_OAUTH_TOKEN": token}, clear=True):
             with contextlib.redirect_stdout(self.output):
                 exec(compile(SCRIPT, "waka-readme.yml", "exec"), {})
 
-    def test_workflow_uses_api_key_secret(self):
+    def test_workflow_uses_dedicated_oauth_secret(self):
         self.assertIn(
-            "WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}", WORKFLOW
+            "WAKATIME_OAUTH_TOKEN: ${{ secrets.WAKATIME_OAUTH_TOKEN }}", WORKFLOW
         )
+        self.assertNotIn("secrets.WAKATIME_API_KEY", WORKFLOW)
 
-    def test_missing_key_fails_before_network_and_preserves_readme(self):
-        with self.assertRaisesRegex(SystemExit, "WAKATIME_API_KEY"):
+    def test_missing_token_fails_before_network_and_preserves_readme(self):
+        with self.assertRaisesRegex(SystemExit, "WAKATIME_OAUTH_TOKEN"):
             self.run_script("")
         self.http.assert_not_called()
         self.assertEqual(self.readme.read_text(encoding="utf-8"), ORIGINAL)
 
-    def test_basic_auth_request_and_same_seven_day_window(self):
-        self.run_script("  " + API_KEY + "  ")
+    def test_legacy_key_is_rejected_without_exposure(self):
+        legacy = "synthetic-legacy-api-key"
+        with self.assertRaisesRegex(SystemExit, "OAuth") as error:
+            self.run_script(legacy)
+        self.http.assert_not_called()
+        self.assertNotIn(legacy, str(error.exception) + self.output.getvalue())
+        self.assertEqual(self.readme.read_text(encoding="utf-8"), ORIGINAL)
+
+    def test_bearer_request_and_same_seven_day_window(self):
+        self.run_script("  " + TOKEN + "  ")
         request = self.http.call_args.args[0]
-        self.assertEqual(
-            request.get_header("Authorization"), "Basic " + BASIC_CREDENTIAL
-        )
+        self.assertEqual(request.get_header("Authorization"), "Bearer " + TOKEN)
         url = urlsplit(request.full_url)
         self.assertEqual(url.scheme, "https")
         self.assertEqual(url.netloc, "api.wakatime.com")
@@ -101,8 +106,7 @@ class WakaWorkflowTests(unittest.TestCase):
             "start": ["2026-10-24"], "end": ["2026-10-30"],
             "timezone": ["America/Sao_Paulo"],
         })
-        for secret in (API_KEY, BASIC_CREDENTIAL):
-            self.assertNotIn(secret, request.full_url + self.output.getvalue())
+        self.assertNotIn(TOKEN, request.full_url + self.output.getvalue())
         self.zone.assert_called_once_with("America/Sao_Paulo")
         updated = self.readme.read_text(encoding="utf-8")
         self.assertIn("Total Time: 7 hrs 0 mins", updated)
@@ -114,11 +118,12 @@ class WakaWorkflowTests(unittest.TestCase):
             with self.subTest(code=code):
                 self.http.reset_mock()
                 self.http.side_effect = HTTPError("https://example.test", code, "", {}, None)
-                with self.assertRaisesRegex(SystemExit, "WAKATIME_API_KEY") as error:
+                with self.assertRaisesRegex(SystemExit, "read_summaries") as error:
                     self.run_script()
                 self.http.assert_called_once()
                 self.sleep.assert_not_called()
-                self.assertNotIn(API_KEY, str(error.exception))
+                self.assertIn("WAKATIME_OAUTH_TOKEN", str(error.exception))
+                self.assertNotIn(TOKEN, str(error.exception))
                 self.assertEqual(self.readme.read_text(encoding="utf-8"), ORIGINAL)
 
     def test_transient_failure_retries_then_updates(self):

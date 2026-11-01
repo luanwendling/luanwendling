@@ -29,10 +29,9 @@ jobs:
 
       - name: Generate WakaTime statistics
         env:
-          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+          WAKATIME_OAUTH_TOKEN: ${{ secrets.WAKATIME_OAUTH_TOKEN }}
         shell: python
         run: |
-          import base64
           import json
           import math
           import os
@@ -46,17 +45,23 @@ jobs:
           from urllib.request import Request, urlopen
           from zoneinfo import ZoneInfo
 
-          api_key = os.environ.get("WAKATIME_API_KEY", "").strip()
-          if not api_key:
+          token = os.environ.get("WAKATIME_OAUTH_TOKEN", "").strip()
+          if not token:
               raise SystemExit(
-                  "O secret WAKATIME_API_KEY não foi configurado. "
-                  "Copie sua API key em https://wakatime.com/api-key "
-                  "e salve-a nos secrets de Actions deste repositório. "
+                  "O secret WAKATIME_OAUTH_TOKEN não foi configurado. "
+                  "Obtenha seu token OAuth pessoal em https://wakatime.com/oauth "
+                  "e salve-o nos secrets de Actions deste repositório. "
                   "O README foi preservado."
               )
 
-          encoded_key = base64.b64encode(api_key.encode()).decode()
-          authorization = f"Basic {encoded_key}"
+          if not token.startswith("waka_tok_") or token == "waka_tok_":
+              raise SystemExit(
+                  "WAKATIME_OAUTH_TOKEN precisa conter um token OAuth "
+                  "de https://wakatime.com/oauth, não uma API key de plugin. "
+                  "O README foi preservado."
+              )
+
+          authorization = f"Bearer {token}"
 
           timezone = "America/Sao_Paulo"
 
@@ -103,7 +108,8 @@ jobs:
                   if error.code in (401, 403):
                       raise SystemExit(
                           f"WakaTime recusou o acesso: HTTP {error.code}. "
-                          "Verifique a validade do secret WAKATIME_API_KEY. "
+                          "Verifique a validade do secret WAKATIME_OAUTH_TOKEN "
+                          "e a permissão read_summaries do token OAuth. "
                           "O README foi preservado."
                       ) from None
 
