@@ -2,6 +2,12 @@
 
 ![](https://komarev.com/ghpvc/?username=luanwendling&color=dc143c)
 
+[![wakatime](https://wakatime.com/badge/user/13ba27f0-fb5f-46cf-ad72-5c001ac27bef.svg)](https://wakatime.com/@13ba27f0-fb5f-46cf-ad72-5c001ac27bef)
+
+Esse é o quanto eu trabalho programando
+
+<a href="https://wakatime.com/@13ba27f0-fb5f-46cf-ad72-5c001ac27bef"><img src="assets/wakatime-activity.svg" alt="Atividade no WakaTime no último ano" /></a>
+
 - 🔭 Atualmente trabalhando na [Pismo](https://www.pismo.io/) (a Visa company) como Site Reliability Engineer.
 - 🌱 Meu foco atualmente está em aplicar minha experiência em Linux, redes, automação, cloud e observabilidade para desenvolver soluções escaláveis, seguras e inovadoras.
 - 📫 Contate-me no email: luanmw0@gmail.com
