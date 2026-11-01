@@ -1,18 +1,10 @@
 ### Olá! Eu sou o Luan 👋
 
-- 🔭 Atualmente trabalhando na [Itaipu Parquetec](https://www.itaipuparquetec.org.br/) como SysAdmin.
+![](https://komarev.com/ghpvc/?username=luanwendling&color=dc143c)
+
+- 🔭 Atualmente trabalhando na [Pismo](https://www.pismo.io/) (a Visa company) como Site Reliability Engineer.
 - 🌱 Meu foco atualmente está em aplicar minha experiência em Linux, redes, automação, cloud e observabilidade para desenvolver soluções escaláveis, seguras e inovadoras.
 - 📫 Contate-me no email: luanmw0@gmail.com
-
-
-## ⏱️ Coding Activity
-<!--START_SECTION:waka-->
-
-```txt
-No activity tracked
-```
-
-<!--END_SECTION:waka-->
 
 
 ## Redes Sociais
@@ -23,3 +15,21 @@ No activity tracked
   <a href = "luanmw0@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
     
 </div>
+
+
+## 📊 Development Analytics
+
+### ⏱️ Coding Activity — Last 7 Days
+
+Weekly coding activity automatically tracked by WakaTime.
+
+<!--START_SECTION:waka-->
+
+```txt
+No activity tracked
+```
+
+<!--END_SECTION:waka-->
+
+---
+*Statistics updated automatically via GitHub Actions.*
