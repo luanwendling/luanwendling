@@ -89,7 +89,7 @@ def cell(x, y, color):
     )
 
 
-def month_labels(days, first_sunday):
+def month_labels(days, first_sunday, width):
     labels = []
     last_month = None
     last_x = -PITCH * 3
@@ -101,7 +101,7 @@ def month_labels(days, first_sunday):
 
         last_month = day.month
         x = LEFT + column * PITCH
-        if x - last_x >= PITCH * 3:
+        if x - last_x >= PITCH * 3 and x + PITCH * 2 <= width:
             labels.append(label(x, 13, f"{day:%b}"))
             last_x = x
 
@@ -120,7 +120,7 @@ def render(days):
         'aria-label="WakaTime coding activity over the last year">',
         f'<rect width="{width}" height="{HEIGHT}" fill="#000"/>',
         f'<g font-family="{FONT}" font-size="12" fill="{TEXT_COLOR}">',
-        *month_labels(days, first_sunday),
+        *month_labels(days, first_sunday, width),
     ]
 
     for row, name in ((1, "Mon"), (3, "Wed"), (5, "Fri")):

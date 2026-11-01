@@ -66,6 +66,10 @@ class ActivityChartTests(unittest.TestCase):
         self.assertLess(svg.index(">Dec<"), svg.index(">Jan<"))
         self.assertIn('<text x="30" y="13" text-anchor="start">Nov</text>', svg)
 
+    def test_month_label_that_would_be_clipped_is_skipped(self):
+        svg = activity.render(activity.parse_days(payload()))
+        self.assertEqual(svg.count(">Nov<"), 1)
+
     def test_incomplete_calendar_is_rejected(self):
         with self.assertRaisesRegex(SystemExit, "preservado"):
             activity.parse_days({"data": {"days": []}})
