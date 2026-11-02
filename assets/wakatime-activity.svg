@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="719" height="132" viewBox="0 0 719 132" role="img" aria-label="WakaTime coding activity over the last year">
-<rect width="719" height="132" fill="#000"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="706" height="132" viewBox="0 0 706 132" role="img" aria-label="WakaTime coding activity over the last year">
+<rect width="706" height="132" fill="#000"/>
 <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#c9d1d9">
 <text x="30" y="13" text-anchor="start">Nov</text>
 <text x="95" y="13" text-anchor="start">Dec</text>
@@ -16,15 +16,15 @@
 <text x="0" y="43" text-anchor="start">Mon</text>
 <text x="0" y="69" text-anchor="start">Wed</text>
 <text x="0" y="95" text-anchor="start">Fri</text>
-<text x="593" y="130" text-anchor="end">Less</text>
-<text x="685" y="130" text-anchor="start">More</text>
+<text x="580" y="130" text-anchor="end">Less</text>
+<text x="672" y="130" text-anchor="start">More</text>
 </g>
-<rect x="599" y="121" width="10" height="10" rx="2" fill="#161b22"/>
-<rect x="612" y="121" width="10" height="10" rx="2" fill="#36526C"/>
-<rect x="625" y="121" width="10" height="10" rx="2" fill="#527DA4"/>
-<rect x="638" y="121" width="10" height="10" rx="2" fill="#8BAAC5"/>
-<rect x="651" y="121" width="10" height="10" rx="2" fill="#B4C7D9"/>
-<rect x="664" y="121" width="10" height="10" rx="2" fill="#EBEDF0"/>
+<rect x="586" y="121" width="10" height="10" rx="2" fill="#161b22"/>
+<rect x="599" y="121" width="10" height="10" rx="2" fill="#36526C"/>
+<rect x="612" y="121" width="10" height="10" rx="2" fill="#527DA4"/>
+<rect x="625" y="121" width="10" height="10" rx="2" fill="#8BAAC5"/>
+<rect x="638" y="121" width="10" height="10" rx="2" fill="#B4C7D9"/>
+<rect x="651" y="121" width="10" height="10" rx="2" fill="#EBEDF0"/>
 <rect x="30" y="21" width="10" height="10" rx="2" fill="#161b22"/>
 <rect x="30" y="34" width="10" height="10" rx="2" fill="#161b22"/>
 <rect x="30" y="47" width="10" height="10" rx="2" fill="#161b22"/>
@@ -389,5 +389,4 @@
 <rect x="693" y="73" width="10" height="10" rx="2" fill="#161b22"/>
 <rect x="693" y="86" width="10" height="10" rx="2" fill="#161b22"/>
 <rect x="693" y="99" width="10" height="10" rx="2" fill="#161b22"/>
-<rect x="706" y="21" width="10" height="10" rx="2" fill="#527DA4"/>
 </svg>
