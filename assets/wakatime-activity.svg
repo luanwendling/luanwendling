@@ -26,7 +26,6 @@
 <rect x="638" y="121" width="10" height="10" rx="2" fill="#8BAAC5"/>
 <rect x="651" y="121" width="10" height="10" rx="2" fill="#B4C7D9"/>
 <rect x="664" y="121" width="10" height="10" rx="2" fill="#EBEDF0"/>
-<rect x="30" y="34" width="10" height="10" rx="2" fill="#161b22"/>
 <rect x="30" y="47" width="10" height="10" rx="2" fill="#161b22"/>
 <rect x="30" y="60" width="10" height="10" rx="2" fill="#161b22"/>
 <rect x="30" y="73" width="10" height="10" rx="2" fill="#161b22"/>
@@ -391,4 +390,5 @@
 <rect x="693" y="99" width="10" height="10" rx="2" fill="#36526C"/>
 <rect x="706" y="21" width="10" height="10" rx="2" fill="#527DA4"/>
 <rect x="706" y="34" width="10" height="10" rx="2" fill="#161b22"/>
+<rect x="706" y="47" width="10" height="10" rx="2" fill="#161b22"/>
 </svg>
