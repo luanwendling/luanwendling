@@ -1,28 +1,29 @@
-### Olá! Eu sou o Luan 👋
+### Hi, I'm Luan 👋
+
+Site Reliability Engineer at [Pismo](https://www.pismo.io/) (a Visa company), based in Brazil.
+
+6+ years in infrastructure and networking, most of them as a SysAdmin in critical environments.
+
+**Main stack**
+
+- **Infra & OS:** Linux, networking, Proxmox
+- **Containers:** Docker, Kubernetes, Helm
+- **Cloud & IaC:** AWS, Terraform, Ansible
+- **Observability:** Prometheus, Grafana
+- **CI/CD:** GitHub Actions
+- **Languages:** Bash, Python, Java, TypeScript
+
+**Contact**
+
+- 💼 [LinkedIn](https://www.linkedin.com/in/luan-wendling/)
+- 📫 luanmw0@gmail.com
 
 ![](https://komarev.com/ghpvc/?username=luanwendling&color=dc143c)
-
 [![wakatime](https://wakatime.com/badge/user/13ba27f0-fb5f-46cf-ad72-5c001ac27bef.svg)](https://wakatime.com/@13ba27f0-fb5f-46cf-ad72-5c001ac27bef)
 
-
-<a href="https://wakatime.com/@13ba27f0-fb5f-46cf-ad72-5c001ac27bef"><img src="assets/wakatime-activity.svg" alt="Atividade no WakaTime no último ano" /></a>
-
-- 🔭 Atualmente trabalhando na [Pismo](https://www.pismo.io/) (a Visa company) como Site Reliability Engineer.
-- 🌱 Meu foco atualmente está em aplicar minha experiência em Linux, redes, automação, cloud e observabilidade para desenvolver soluções escaláveis, seguras e inovadoras.
-- 📫 Contate-me no email: luanmw0@gmail.com
-
-
-## Redes Sociais
-
-<div> 
- 
-  <a href="https://www.linkedin.com/in/luan-wendling/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
-  <a href = "luanmw0@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
-    
-</div>
-
-
 ## 📊 Development Analytics
+
+<a href="https://wakatime.com/@13ba27f0-fb5f-46cf-ad72-5c001ac27bef"><img src="assets/wakatime-activity.svg" alt="WakaTime coding activity over the last year" /></a>
 
 ### ⏱️ Coding Activity — Last 7 Days
 
